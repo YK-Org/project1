@@ -6,14 +6,14 @@
       class="bg-white/90 rounded-3xl shadow-xl p-8 max-w-md w-full relative text-center"
     >
       <!-- Overlapping Photos -->
-      <div class="absolute -top-12 left-1/2 -translate-x-1/2 flex gap-2">
+      <div class="absolute -top-12 left-1/2 -translate-x-1/2 flex z-10">
         <img
-          src="/images/pic1.png"
-          class="w-16 h-16 object-cover rounded-lg shadow-md rotate-[-6deg]"
+          src="/images/pic5.png"
+          class="w-20 h-24 rounded-lg shadow-xl rotate-[-14deg] bg-white p-1 mt-4"
         />
         <img
-          src="/images/pic2.png"
-          class="w-16 h-16 object-cover rounded-lg shadow-md rotate-[5deg]"
+          src="/images/pic6.png"
+          class="w-20 h-24 rounded-lg shadow-xl rotate-[9deg] bg-white p-1"
         />
       </div>
 
@@ -41,18 +41,27 @@
       />
 
       <!-- Guest Count -->
-      <p class="text-sm text-gray-700 mb-6">
-        I'll come with
-        <span class="inline-flex items-center gap-1 mx-1">
-          <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full"
-            >1</span
+      <div class="flex flex-row mb-6 text-sm text-gray-700">
+        <p class="mb-2">I'll come with</p>
+        <div class="flex items-center gap-4 mx-2">
+          <button
+            @click="decreaseGuests"
+            class="bg-green-600 text-white rounded-full w-4 h-4 flex items-center justify-center pb-px text-sm font-extrabold"
           >
-          <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full"
-            >1</span
+            –
+          </button>
+          <span class="text-green-800 text-lg font-extrabold">{{
+            guests
+          }}</span>
+          <button
+            @click="increaseGuests"
+            class="bg-green-600 text-white rounded-full w-4 h-4 flex items-center justify-center pb-2 text-sm font-extrabold"
           >
-        </span>
-        other person
-      </p>
+            +
+          </button>
+        </div>
+        <p>other person<span v-if="guests !== 1">s</span></p>
+      </div>
 
       <!-- RSVP Button -->
       <button
@@ -79,7 +88,14 @@
 import { ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 const name = ref("");
+const guests = ref(1);
 
+function increaseGuests() {
+  guests.value += 1;
+}
+function decreaseGuests() {
+  if (guests.value > 1) guests.value -= 1;
+}
 function submitRSVP() {
   if (name.value.trim() === "") {
     alert("Please enter your full name");

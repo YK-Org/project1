@@ -3,14 +3,14 @@
     class="min-h-screen bg-[url('/images/yk2.png')] bg-cover bg-center flex flex-col items-center justify-center px-4 py-16"
   >
     <div class="relative w-full max-w-lg">
-      <div class="absolute -top-12 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div class="absolute -top-14 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         <img
           src="/images/gift1.png"
           class="w-20 md:w-24 rotate-[-6deg] rounded-lg"
         />
         <img
           src="/images/gift2.png"
-          class="w-20 md:w-24 rotate-[6deg] rounded-lg -ml-16"
+          class="w-20 md:w-24 rotate-[6deg] rounded-lg -ml-14"
         />
       </div>
 
