@@ -23,19 +23,19 @@
       <div class="relative h-[500px] w-full">
         <img
           src="/images/pic4.png"
-          class="absolute top-0 left-12 w-32 h-32 rounded-xl shadow-xl rotate-[-5deg] bg-white p-1"
+          class="object-cover absolute top-0 left-12 w-32 h-32 rounded-xl shadow-xl rotate-[-5deg] bg-white p-1"
         />
         <img
           src="/images/pic7.png"
-          class="absolute top-0 left-44 w-32 h-32 rounded-xl shadow-xl rotate-[3deg] bg-white p-1"
+          class="object-cover absolute top-0 left-44 w-32 h-32 rounded-xl shadow-xl rotate-[3deg] bg-white p-1"
         />
         <img
           src="/images/pic1.png"
-          class="absolute top-36 left-4 w-32 h-32 rounded-xl shadow-xl rotate-[-3deg] bg-white p-1"
+          class="object-cover absolute top-36 left-4 w-32 h-32 rounded-xl shadow-xl rotate-[-3deg] bg-white p-1"
         />
         <img
           src="/images/pic6.png"
-          class="absolute top-32 left-40 w-32 h-32 rounded-xl shadow-xl rotate-[5deg] bg-white p-1"
+          class="object-cover absolute top-32 left-40 w-32 h-32 rounded-xl shadow-xl rotate-[5deg] bg-white p-1"
         />
         <img
           src="/images/pic3.png"
@@ -43,15 +43,15 @@
         />
         <img
           src="/images/pic5.png"
-          class="absolute top-60 left-20 w-32 h-32 rounded-xl shadow-xl rotate-[2deg] bg-white p-1"
+          class="object-cover absolute top-60 left-20 w-32 h-32 rounded-xl shadow-xl rotate-[2deg] bg-white p-1"
         />
         <img
           src="/images/pic2.png"
-          class="absolute top-60 left-48 w-32 h-32 rounded-xl shadow-xl rotate-[1deg] bg-white p-1"
+          class="object-cover absolute top-60 left-48 w-32 h-32 rounded-xl shadow-xl rotate-[1deg] bg-white p-1"
         />
         <img
           src="/images/pic.png"
-          class="absolute top-48 left-72 w-32 h-32 rounded-xl shadow-xl rotate-[-4deg] bg-white p-1"
+          class="object-cover absolute top-48 left-72 w-32 h-32 rounded-xl shadow-xl rotate-[-4deg] bg-white p-1"
         />
       </div>
     </div>

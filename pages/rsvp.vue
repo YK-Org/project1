@@ -9,11 +9,11 @@
       <div class="absolute -top-12 left-1/2 -translate-x-1/2 flex z-10">
         <img
           src="/images/pic5.png"
-          class="w-20 h-24 rounded-lg shadow-xl rotate-[-14deg] bg-white p-1 mt-4"
+          class="object-cover w-20 h-24 rounded-lg shadow-xl rotate-[-14deg] bg-white p-1 mt-4"
         />
         <img
           src="/images/pic6.png"
-          class="w-20 h-24 rounded-lg shadow-xl rotate-[9deg] bg-white p-1"
+          class="object-cover w-20 h-24 rounded-lg shadow-xl rotate-[9deg] bg-white p-1"
         />
       </div>
 
