@@ -28,11 +28,14 @@
       <!-- Heading -->
       <div class="flex flex-col justify-center items-center gap-1">
         <p class="text-xs text-gray-500 uppercase">
-          We’re so grateful for your love and support! That alone are our greatest gift.
+          We’re so grateful for your love and support — that alone is our
+          greatest gift.
         </p>
-        <h2 class="text-xl lg:text-2xl font-semibold tracking-tight text-brown-800">
-          We’re excited to start our life together. If you’d like to give a gift please
-          consider:
+        <h2
+          class="text-xl lg:text-2xl font-semibold tracking-tight text-brown-800"
+        >
+          We’re excited to start our life together. If you’d like to give a
+          gift, please consider one of the following:
         </h2>
       </div>
 
@@ -50,13 +53,16 @@
             <div class="flex flex-col gap-1 text-sm">
               <p class="font-bold">Gift in Cash</p>
               <p>
-                <span class="text-gray-500 text-sm">Account Name: </span> Joshua Yoofi
-                Graham
+                <span class="text-gray-500 text-sm">Account Name: </span> Joshua
+                Yoofi Graham
               </p>
-              <p><span class="text-gray-500 text-sm">MTN MoMo: </span> 050 123 4567</p>
               <p>
-                <span class="text-gray-500 text-sm">First National Bank: </span> 0004 0878
-                7799 7878
+                <span class="text-gray-500 text-sm">MTN MoMo: </span> 050 123
+                4567
+              </p>
+              <p>
+                <span class="text-gray-500 text-sm">First National Bank: </span>
+                0004 0878 7799 7878
               </p>
             </div>
           </div>
@@ -68,8 +74,11 @@
           <span class="text-lg">💻</span>
           <div>
             <p class="text-sm leading-snug">
-              Requesting for our services as Website and App design & development.
-              <span class="italic text-xs text-gray-500">Please after honeymoon 😅</span>
+              Requesting for our services as Website and App design &
+              development.
+              <span class="italic text-xs text-gray-500"
+                >Please after honeymoon 😅</span
+              >
             </p>
             <p class="text-xs text-gray-500">
               We designed and developed this website ourselves.😉
