@@ -16,13 +16,13 @@
         </h2>
         <p class="text-brown-800 leading-loose text-sm md:text-base">
           Our story started during a software company internship. We didn’t know
-          each other — most people seemed to have some connection, but we were
-          just two strangers figuring things out. We worked really well together
-          and became a solid team. That continued during national service, and
-          we both got the chance to stay on afterward. After a while of working
-          side by side, we started dating. Since then, it’s been an amazing
-          journey. It’s so special to see how our families’ paths have crossed
-          too. It really feels like this was meant to be.
+          each other at the time. Most people seemed to have some connection,
+          but we were just two strangers figuring things out. We worked really
+          well together and became a solid team. That continued during national
+          service, and we both got the chance to stay on afterward. After a
+          while of working side by side, we started dating. Since then, it’s
+          been an amazing journey. It’s so special to see how our families’
+          paths have crossed too. It really feels like this was meant to be.
         </p>
       </div>
 
