@@ -158,7 +158,7 @@ async function submitRSVP() {
   }
 
   const payload = {
-    name,
+    name: name.value,
     number_of_guests: guests.value,
   };
 
