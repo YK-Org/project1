@@ -157,7 +157,12 @@ async function submitRSVP() {
     return;
   }
 
-  const response = await fetch(
+  const payload = {
+    name,
+    number_of_guests: guests.value,
+  };
+
+  await fetch(
     "https://script.google.com/macros/s/AKfycbzD9S-YYUDVyV83DocC9SVbzDGH614mr19Ys7EiGpHSA2DHb4-WnyIY_jxL9G1Pq8lJ/exec",
     {
       method: "POST",
