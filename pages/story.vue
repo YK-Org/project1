@@ -11,20 +11,24 @@
       class="w-full h-full max-auto max-w-4xl flex flex-col lg:flex-row justify-center gap-16"
     >
       <div class="flex flex-col w-ful gap-2 w-full">
-        <h2 class="text-6xl font-great text-brown-700 font-medium">Our Story</h2>
+        <h2 class="text-6xl font-great text-brown-700 font-medium">
+          Our Story
+        </h2>
         <p class="text-brown-800 leading-loose text-sm md:text-base">
-          Our story starts in the slightly less romantic setting of a software company
-          internship, about seven years back. While everyone else seemed to have some kind
-          of 'friend of a friend' connection with her, I was the odd one out. We were just
-          two interns, focused on getting the job done. Turns out, we worked really well
-          together. That teamwork continued through our national service, and we were both
-          kept on. After 2+ years working side-by-side, I finally asked her out. Six years
-          later, we're here now, and it's amazing to discover how deeply our families'
-          paths have crossed. It feels like our paths were always meant to cross.
+          Our story started during a software company internship. We didn’t know
+          each other — most people seemed to have some connection, but we were
+          just two strangers figuring things out. We worked really well together
+          and became a solid team. That continued during national service, and
+          we both got the chance to stay on afterward. After a while of working
+          side by side, we started dating. Since then, it’s been an amazing
+          journey. It’s so special to see how our families’ paths have crossed
+          too. It really feels like this was meant to be.
         </p>
       </div>
 
-      <div class="relative w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3">
+      <div
+        class="relative w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3"
+      >
         <img
           src="/images/pic4.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-10deg] hover:rotate-0 bg-white p-1"
