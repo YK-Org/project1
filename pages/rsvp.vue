@@ -8,7 +8,7 @@
     ></div>
 
     <div
-      class="bg-white flex flex-col items-center gap-4 rounded-3xl  p-4 lg:p-8 max-w-md w-full relative text-center"
+      class="bg-white flex flex-col items-center gap-4 rounded-3xl p-4 lg:p-8 max-w-md w-full relative text-center"
     >
       <!-- Overlapping Photos -->
       <div class="absolute -mt-12 lg:-mt-24 flex justify-center w-full z-10">
@@ -27,8 +27,12 @@
 
       <!-- Heading -->
       <div class="flex flex-col justify-center items-center gap-1">
-        <p class="text-xs text-gray-500 uppercase">This Helps Us Plan For the Numbers</p>
-        <h2 class="text-xl lg:text-2xl font-semibold tracking-tight text-brown-800 mb-6">
+        <p class="text-xs text-gray-500 uppercase">
+          This Helps Us Plan For the Numbers
+        </p>
+        <h2
+          class="text-xl lg:text-2xl font-semibold tracking-tight text-brown-800 mb-6"
+        >
           Let Us Know If You Can Join Us:
         </h2>
       </div>
@@ -36,7 +40,9 @@
       <div class="flex flex-col gap-4 w-full">
         <!-- Full Name Input -->
         <div class="flex flex-col w-full">
-          <label class="block text-left text-sm text-gray-700 mb-1 ml-1" for="fullName"
+          <label
+            class="block text-left text-sm text-gray-700 mb-1 ml-1"
+            for="fullName"
             >Enter full name</label
           >
           <input
@@ -49,7 +55,9 @@
         </div>
 
         <!-- Guest Count -->
-        <div class="flex items-center justify-start text-sm tracking-tight text-gray-700 gap-2">
+        <div
+          class="flex items-center justify-start text-sm tracking-tight text-gray-700 gap-2"
+        >
           <span class="">I'll come with</span>
           <div class="flex items-center gap-4">
             <button
@@ -64,10 +72,16 @@
                 stroke="currentColor"
                 class="size-4"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14"
+                />
               </svg>
             </button>
-            <span class="text-green-600 text-lg font-extrabold">{{ guests }}</span>
+            <span class="text-green-600 text-lg font-extrabold">{{
+              guests
+            }}</span>
             <button
               @click="increaseGuests"
               class="bg-green-50 text-green-600 hover:bg-green-700 hover:text-white border-2 border-green-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
@@ -137,11 +151,23 @@ function increaseGuests() {
 function decreaseGuests() {
   if (guests.value > 0) guests.value -= 1;
 }
-function submitRSVP() {
+async function submitRSVP() {
   if (name.value.trim() === "") {
     alert("Please enter your full name");
     return;
   }
+
+  const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbzD9S-YYUDVyV83DocC9SVbzDGH614mr19Ys7EiGpHSA2DHb4-WnyIY_jxL9G1Pq8lJ/exec",
+    {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
   alert(`Thanks ${name.value}, your RSVP has been saved!`);
   name.value = "";
 }
