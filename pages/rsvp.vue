@@ -1,86 +1,127 @@
 <template>
   <div
-    class="min-h-screen bg-[url('/images/yk2.png')] bg-cover bg-center flex flex-col items-center justify-center px-4 py-16"
+    class="relative min-h-dvh flex flex-col justify-center items-center overflow-hidden px-4 py-24 lg:py-16"
   >
+    <!-- Background Image with Reduced Opacity -->
     <div
-      class="bg-white/90 rounded-3xl shadow-xl p-8 max-w-md w-full relative text-center"
+      class="absolute inset-0 bg-[url('/images/yk2.png')] bg-cover bg-center z-0"
+    ></div>
+
+    <div
+      class="bg-white flex flex-col items-center gap-4 rounded-3xl  p-4 lg:p-8 max-w-md w-full relative text-center"
     >
       <!-- Overlapping Photos -->
-      <div class="absolute -top-12 left-1/2 -translate-x-1/2 flex z-10">
+      <div class="absolute -mt-12 lg:-mt-24 flex justify-center w-full z-10">
         <img
           src="/images/pic5.png"
-          class="object-cover w-20 h-24 rounded-lg shadow-xl rotate-[-14deg] bg-white p-1 mt-4"
+          class="object-cover aspect-square size-16 lg:size-24 rounded-2xl shadow-xl rotate-[-14deg] bg-white p-1 mt-4"
         />
         <img
           src="/images/pic6.png"
-          class="object-cover w-20 h-24 rounded-lg shadow-xl rotate-[9deg] bg-white p-1"
+          class="object-cover aspect-square size-16 lg:size-24 rounded-2xl shadow-xl rotate-[9deg] bg-white p-1"
         />
       </div>
 
       <!-- Spacer for photos -->
-      <div class="mt-12" />
+      <div class="mt-8 lg:mt-12" />
 
       <!-- Heading -->
-      <p class="text-xs text-gray-500 uppercase mb-1">
-        This Helps Us Plan For the Numbers
-      </p>
-      <h2 class="text-lg font-semibold text-gray-900 mb-6">
-        Let Us Know If You Can Join Us:
-      </h2>
+      <div class="flex flex-col justify-center items-center gap-1">
+        <p class="text-xs text-gray-500 uppercase">This Helps Us Plan For the Numbers</p>
+        <h2 class="text-xl lg:text-2xl font-semibold tracking-tight text-brown-800 mb-6">
+          Let Us Know If You Can Join Us:
+        </h2>
+      </div>
 
-      <!-- Full Name Input -->
-      <label class="block text-left text-sm text-gray-700 mb-1" for="fullName"
-        >Enter full name</label
-      >
-      <input
-        v-model="name"
-        id="fullName"
-        type="text"
-        placeholder="Enter full name"
-        class="w-full px-4 py-2 rounded-lg border border-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-green-600"
-      />
-
-      <!-- Guest Count -->
-      <div class="flex flex-row mb-6 text-sm text-gray-700">
-        <p class="mb-2">I'll come with</p>
-        <div class="flex items-center gap-4 mx-2">
-          <button
-            @click="decreaseGuests"
-            class="bg-green-600 text-white rounded-full w-4 h-4 flex items-center justify-center pb-px text-sm font-extrabold"
+      <div class="flex flex-col gap-4 w-full">
+        <!-- Full Name Input -->
+        <div class="flex flex-col w-full">
+          <label class="block text-left text-sm text-gray-700 mb-1 ml-1" for="fullName"
+            >Enter full name</label
           >
-            –
-          </button>
-          <span class="text-green-800 text-lg font-extrabold">{{
-            guests
-          }}</span>
-          <button
-            @click="increaseGuests"
-            class="bg-green-600 text-white rounded-full w-4 h-4 flex items-center justify-center pb-2 text-sm font-extrabold"
-          >
-            +
-          </button>
+          <input
+            v-model="name"
+            id="fullName"
+            type="text"
+            placeholder="Enter full name"
+            class="w-full px-3 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600/40 placeholder:text-sm"
+          />
         </div>
-        <p>other person<span v-if="guests !== 1">s</span></p>
+
+        <!-- Guest Count -->
+        <div class="flex items-center justify-start text-sm tracking-tight text-gray-700 gap-2">
+          <span class="">I'll come with</span>
+          <div class="flex items-center gap-4">
+            <button
+              @click="decreaseGuests"
+              class="bg-green-50 text-green-600 hover:bg-green-700 hover:text-white border-2 border-green-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="size-4"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+              </svg>
+            </button>
+            <span class="text-green-600 text-lg font-extrabold">{{ guests }}</span>
+            <button
+              @click="increaseGuests"
+              class="bg-green-50 text-green-600 hover:bg-green-700 hover:text-white border-2 border-green-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="size-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+            </button>
+          </div>
+          <span>other person<span v-if="guests !== 1">s</span></span>
+        </div>
       </div>
 
       <!-- RSVP Button -->
       <button
         @click="submitRSVP"
-        class="w-full bg-green-700 text-white py-2 rounded-full font-semibold hover:bg-green-800 transition"
+        class="w-full bg-green-700 text-white py-3 mt-4 rounded-full font-semibold hover:bg-green-800"
       >
         Save RSVP
       </button>
 
       <!-- Call-to-Action -->
       <p class="mt-6 text-sm text-gray-700">
-        Call : <span class="text-brown-700 font-semibold">Ama</span> on
-        <span class="text-red-600 font-semibold">020 123 4567</span>
+        Call: Prosper on
+        <a
+          class="text-green-600 font-semibold underline"
+          href=":tel:020 123 4567"
+          target="_blank"
+          rel="noopener noreferrer"
+          >020 123 4567</a
+        >
+        or Edith on
+        <a
+          class="text-green-600 font-semibold underline"
+          href=":tel:020 123 4567"
+          target="_blank"
+          rel="noopener noreferrer"
+          >020 123 4567</a
+        >
       </p>
     </div>
 
-    <div class="flex flex-col justify-center items-center text-center mt-12">
-      <NavBar />
-    </div>
+    <NavBar />
   </div>
 </template>
 
@@ -88,13 +129,13 @@
 import { ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 const name = ref("");
-const guests = ref(1);
+const guests = ref(0);
 
 function increaseGuests() {
   guests.value += 1;
 }
 function decreaseGuests() {
-  if (guests.value > 1) guests.value -= 1;
+  if (guests.value > 0) guests.value -= 1;
 }
 function submitRSVP() {
   if (name.value.trim() === "") {
