@@ -165,11 +165,7 @@ async function submitRSVP() {
   const res = await fetch("/api/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: this.name,
-      email: this.email,
-      message: this.message,
-    }),
+    body: JSON.stringify(payload),
   });
 
   const result = await res.json();
