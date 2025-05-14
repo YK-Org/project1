@@ -162,14 +162,11 @@ async function submitRSVP() {
     number_of_guests: guests.value,
   };
 
-  const res = await fetch("/api/submit", {
+  await fetch("/api/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
-
-  const result = await res.json();
-  console.log("Success:", result);
 
   alert(`Thanks ${name.value}, your RSVP has been saved!`);
   name.value = "";
