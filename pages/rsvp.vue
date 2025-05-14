@@ -162,16 +162,18 @@ async function submitRSVP() {
     number_of_guests: guests.value,
   };
 
-  await fetch(
-    "https://script.google.com/macros/s/AKfycbzD9S-YYUDVyV83DocC9SVbzDGH614mr19Ys7EiGpHSA2DHb4-WnyIY_jxL9G1Pq8lJ/exec",
-    {
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const res = await fetch("/api/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: this.name,
+      email: this.email,
+      message: this.message,
+    }),
+  });
+
+  const result = await res.json();
+  console.log("Success:", result);
 
   alert(`Thanks ${name.value}, your RSVP has been saved!`);
   name.value = "";
