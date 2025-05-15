@@ -74,10 +74,9 @@
           <span class="text-lg">💻</span>
           <div>
             <p class="text-sm leading-snug">
-              Requesting for our services as Website and App design &
-              development.
+              Request for our website and app design and development services
               <span class="italic text-xs text-gray-500"
-                >Please after honeymoon 😅</span
+                >Please after the honeymoon 😅</span
               >
             </p>
             <p class="text-xs text-gray-500">
