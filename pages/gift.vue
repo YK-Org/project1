@@ -28,7 +28,7 @@
       <!-- Heading -->
       <div class="flex flex-col justify-center items-center gap-1">
         <p class="text-xs text-gray-500 uppercase">
-          We’re so grateful for your love and support — that alone is our
+          We’re so grateful for your love and support. That alone is our
           greatest gift.
         </p>
         <h2
