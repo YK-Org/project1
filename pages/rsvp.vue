@@ -144,6 +144,7 @@ import { ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 const name = ref("");
 const guests = ref(0);
+const loading = ref(false);
 
 function increaseGuests() {
   guests.value += 1;
@@ -152,23 +153,29 @@ function decreaseGuests() {
   if (guests.value > 0) guests.value -= 1;
 }
 async function submitRSVP() {
-  if (name.value.trim() === "") {
-    alert("Please enter your full name");
-    return;
+  try {
+    loading.value = true;
+    if (name.value.trim() === "") {
+      alert("Please enter your full name");
+      return;
+    }
+
+    const payload = {
+      name: name.value,
+      number_of_guests: guests.value + 1,
+    };
+
+    await fetch("/api/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    alert(`Thanks ${name.value}, your RSVP has been saved!`);
+    name.value = "";
+    guests.value = 0;
+  } finally {
+    loading.value = false;
   }
-
-  const payload = {
-    name: name.value,
-    number_of_guests: guests.value,
-  };
-
-  await fetch("/api/submit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  alert(`Thanks ${name.value}, your RSVP has been saved!`);
-  name.value = "";
 }
 </script>
