@@ -163,7 +163,7 @@ async function submitRSVP() {
     const payload = {
       name: name.value,
       number_of_guests: guests.value + 1,
-      created_date: new Date().toISOString(),
+      created_date: new Date(),
     };
 
     await fetch("/api/submit", {
