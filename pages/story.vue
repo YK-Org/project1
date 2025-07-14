@@ -29,35 +29,35 @@
       <div
         class="relative w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3"
       >
-        <img
+        <NuxtImg
           src="/images/pic4.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-10deg] hover:rotate-0 bg-white p-1"
         />
-        <img
+        <NuxtImg
           src="/images/pic7.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[9deg] hover:rotate-0 bg-white p-1"
         />
-        <img
+        <NuxtImg
           src="/images/pic1.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-6deg] hover:rotate-0 bg-white p-1"
         />
-        <img
+        <NuxtImg
           src="/images/pic6.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[9deg] hover:rotate-0 bg-white p-1"
         />
-        <img
+        <NuxtImg
           src="/images/pic3.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-8deg] hover:rotate-0 bg-white p-1"
         />
-        <img
+        <NuxtImg
           src="/images/pic5.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[4deg] hover:rotate-0 bg-white p-1"
         />
-        <img
+        <NuxtImg
           src="/images/pic2.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[2deg] hover:rotate-0 bg-white p-1"
         />
-        <img
+        <NuxtImg
           src="/images/pic.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-8deg] hover:rotate-0 bg-white p-1"
         />

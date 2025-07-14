@@ -12,18 +12,18 @@
     >
       <!-- Overlapping Photos -->
       <div class="absolute -mt-12 lg:-mt-24 flex justify-center w-full z-10">
-        <img
+        <NuxtImg
           src="/images/pic5.png"
           class="object-cover aspect-square size-16 lg:size-24 rounded-2xl shadow-xl rotate-[-14deg] bg-white p-1 mt-4"
         />
-        <img
+        <NuxtImg
           src="/images/pic6.png"
           class="object-cover aspect-square size-16 lg:size-24 rounded-2xl shadow-xl rotate-[9deg] bg-white p-1"
         />
       </div>
 
       <!-- Spacer for photos -->
-      <div class="mt-8 lg:mt-12" />
+      <div class="mt-6" />
 
       <!-- Heading -->
       <div class="flex flex-col justify-center items-center gap-1">
@@ -50,7 +50,7 @@
             id="fullName"
             type="text"
             placeholder="Enter full name"
-            class="w-full px-3 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600/40 placeholder:text-sm"
+            class="w-full px-3 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600/40 placeholder:text-sm"
           />
         </div>
 
@@ -62,7 +62,7 @@
           <div class="flex items-center gap-4">
             <button
               @click="decreaseGuests"
-              class="bg-green-50 text-green-600 hover:bg-green-700 hover:text-white border-2 border-green-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
+              class="bg-emerald-50 text-emerald-600 hover:bg-emerald-700 hover:text-white border-2 border-emerald-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -79,12 +79,12 @@
                 />
               </svg>
             </button>
-            <span class="text-green-600 text-lg font-extrabold">{{
+            <span class="text-emerald-600 text-lg font-extrabold">{{
               guests
             }}</span>
             <button
               @click="increaseGuests"
-              class="bg-green-50 text-green-600 hover:bg-green-700 hover:text-white border-2 border-green-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
+              class="bg-emerald-50 text-emerald-600 hover:bg-emerald-700 hover:text-white border-2 border-emerald-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@
       <!-- RSVP Button -->
       <button
         @click="submitRSVP"
-        class="w-full bg-green-700 text-white py-3 mt-4 rounded-full font-semibold hover:bg-green-800"
+        class="w-full bg-emerald-700 text-white py-3 mt-4 rounded-full font-semibold hover:bg-emerald-800"
       >
         Save RSVP
       </button>
@@ -118,19 +118,19 @@
       <p class="mt-6 text-sm text-gray-700">
         Call: Prosper on
         <a
-          class="text-green-600 font-semibold underline"
-          href=":tel:020 123 4567"
+          class="text-emerald-600 font-semibold underline"
+          href=":tel:+233203660341"
           target="_blank"
           rel="noopener noreferrer"
-          >020 123 4567</a
+          >020 366 0341</a
         >
         or Edith on
         <a
-          class="text-green-600 font-semibold underline"
-          href=":tel:020 123 4567"
+          class="text-emerald-600 font-semibold underline"
+          href=":tel:+233241981002"
           target="_blank"
           rel="noopener noreferrer"
-          >020 123 4567</a
+          >024 198 1002</a
         >
       </p>
     </div>
