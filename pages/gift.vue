@@ -48,14 +48,16 @@
             <span class="text-lg">🎁</span>
             <div class="flex flex-col gap-1 text-sm">
               <p class="font-bold">Gift in Cash</p>
-              <p>
-                <span class="text-gray-500 text-sm">Account Name: </span> Joshua Yoofi
-                Graham
+              <p class="text-gray-500 text-sm">
+                MTN MoMo: <span class="font-semibold text-gray-900">055 738 2244</span>
               </p>
-              <p><span class="text-gray-500 text-sm">MTN MoMo: </span> 050 123 4567</p>
-              <p>
-                <span class="text-gray-500 text-sm">First National Bank: </span>
-                0004 0878 7799 7878
+              <p class="text-gray-500 text-sm">
+                First National Bank:
+                <span class="font-semibold text-gray-900">1011011754004 </span>
+              </p>
+              <p class="text-gray-500 text-sm">
+                Account Name:
+                <span class="font-semibold text-gray-900">Joshua Yoofi Graham</span>
               </p>
             </div>
           </div>

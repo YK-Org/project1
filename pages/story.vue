@@ -14,7 +14,7 @@
         <h2 class="text-6xl font-great text-brown-700 font-medium">
           Our Story
         </h2>
-        <p class="text-brown-800 leading-loose text-sm md:text-base">
+        <p class="text-brown-800 leading-10 text-sm md:text-base text-justify">
           Our story started during a software company internship. We didn’t know
           each other at the time. Most people seemed to have some connection,
           but we were just two strangers figuring things out. We worked really

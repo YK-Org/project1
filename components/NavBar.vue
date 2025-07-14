@@ -21,7 +21,7 @@ const route = useRoute();
 
 function linkClass(path) {
   return route.path === path
-    ? "bg-emerald-700 text-white px-3 py-2 rounded-3xl font-medium drop-shadow"
+    ? "bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-2 rounded-3xl font-medium drop-shadow transition-all delay-75 ease-in-out duration-300"
     : "hover:bg-gray-100 rounded-3xl px-3 py-2 transition-all delay-75 ease-in-out duration-300";
 }
 </script>
