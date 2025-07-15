@@ -22,7 +22,7 @@
       >
         <div>
           <h2
-            class="text-xl md:text-xl font-bold text-center sm:text-left tracking-tight text-green-800"
+            class="text-xl md:text-xl font-bold text-center sm:text-left tracking-tight text-emerald-800"
           >
             Trinity United Church
           </h2>
@@ -31,7 +31,7 @@
         <a
           href="https://maps.google.com/?q=Trinity+United+Church,+Accra"
           target="_blank"
-          class="bg-green-700 text-white px-3 py-2 rounded-full tex-base font-semibold hover:bg-green-800"
+          class="bg-emerald-700 text-white px-3 py-2 rounded-full tex-base font-semibold hover:bg-emerald-800"
         >
           Get Directions
         </a>
