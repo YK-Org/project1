@@ -109,9 +109,11 @@
       <!-- RSVP Button -->
       <button
         @click="submitRSVP"
-        class="w-full bg-green-700 text-white py-3 mt-4 rounded-full font-semibold hover:bg-green-800"
+        :disabled="loading"
+        class="w-full bg-green-700 text-white py-3 mt-4 rounded-full font-semibold hover:bg-green-800 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Save RSVP
+        <span v-if="loading">Saving...</span>
+        <span v-else>Save RSVP</span>
       </button>
 
       <!-- Call-to-Action -->
