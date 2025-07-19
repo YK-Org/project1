@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-dvh flex flex-col justify-center items-center overflow-hidden px-4 py-24 lg:py-16"
+    class="relative min-h-dvh flex flex-col justify-center items-center overflow-hidden px-4 py-24 lg:py-16 pt-8 lg:pt-8"
   >
     <!-- Background Image with Reduced Opacity -->
     <div
@@ -8,13 +8,13 @@
     ></div>
 
     <div
-      class="w-full h-full max-auto max-w-4xl flex flex-col lg:flex-row justify-center gap-16"
+      class="w-full h-full max-auto max-w-md flex flex-col justify-center gap-8"
     >
       <div class="flex flex-col w-ful gap-2 w-full">
         <h2 class="text-6xl font-great text-brown-700 font-medium">
           Our Story
         </h2>
-        <p class="text-brown-800 leading-10 text-sm md:text-base text-justify">
+        <p class="text-brown-800 leading-6 sm:leading-10 text-sm md:text-base text-justify">
           Our story started during a software company internship. We didn’t know
           each other at the time. Most people seemed to have some connection,
           but we were just two strangers figuring things out. We worked really
@@ -27,7 +27,7 @@
       </div>
 
       <div
-        class="relative w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3"
+        class="relative w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4"
       >
         <NuxtImg
           src="/images/pic4.png"
@@ -62,7 +62,7 @@
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-8deg] hover:rotate-0 bg-white p-1"
         />
 
-        <div
+        <!-- <div
           class="translate-y-4 rotate-2 hover:rotate-0 border-2 scale-90 aspect-auto size-24 lg:size-32 border-dotted border-orange-200 bg-orange-100/40 hover:bg-orange-100/60 rounded-xl flex flex-col justify-center items-center p-4 transition-all duration-200 delay-75 ease-in-out"
         >
           <svg
@@ -81,7 +81,7 @@
           </svg>
 
           <p class="text-sm text-center text-brown-800">Wedding Photos</p>
-        </div>
+        </div> -->
       </div>
     </div>
 
