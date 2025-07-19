@@ -27,12 +27,8 @@
 
       <!-- Heading -->
       <div class="flex flex-col justify-center items-center gap-1">
-        <p class="text-xs text-gray-500 uppercase">
-          This Helps Us Plan For the Numbers
-        </p>
-        <h2
-          class="text-xl lg:text-2xl font-semibold tracking-tight text-brown-800 mb-6"
-        >
+        <p class="text-xs text-gray-500 uppercase">This Helps Us Plan For the Numbers</p>
+        <h2 class="text-xl lg:text-2xl font-semibold tracking-tight text-brown-800 mb-6">
           Let Us Know If You Can Join Us:
         </h2>
       </div>
@@ -40,9 +36,7 @@
       <div class="flex flex-col gap-4 w-full">
         <!-- Full Name Input -->
         <div class="flex flex-col w-full">
-          <label
-            class="block text-left text-sm text-gray-700 mb-1 ml-1"
-            for="fullName"
+          <label class="block text-left text-sm text-gray-700 mb-1 ml-1" for="fullName"
             >Enter full name</label
           >
           <input
@@ -72,16 +66,10 @@
                 stroke="currentColor"
                 class="size-4"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M5 12h14"
-                />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
               </svg>
             </button>
-            <span class="text-emerald-600 text-lg font-extrabold">{{
-              guests
-            }}</span>
+            <span class="text-emerald-600 text-lg font-extrabold">{{ guests }}</span>
             <button
               @click="increaseGuests"
               class="bg-emerald-50 text-emerald-600 hover:bg-emerald-700 hover:text-white border-2 border-emerald-100 rounded-full flex items-center justify-center p-2 text-xl font-extrabold transition-all duration-300 ease-in-out delay-75"
@@ -106,6 +94,10 @@
         </div>
       </div>
 
+      <p v-if="funnyNote" class="text-base font-semibold text-amber-600 text-left mt-2 italic">
+        {{ funnyNote }}
+      </p>
+
       <!-- RSVP Button -->
       <button
         @click="submitRSVP"
@@ -119,20 +111,18 @@
       <!-- Call-to-Action -->
       <p class="mt-6 text-sm text-gray-700">
         Call: Prosper on
-        <a
-          class="text-emerald-600 font-semibold underline"
-          href=":tel:+233203660341"
+        <NuxtLink
+          to="tel:+233203660341"
           target="_blank"
-          rel="noopener noreferrer"
-          >020 366 0341</a
+          class="text-emerald-600 font-semibold underline"
+          >020 366 0341</NuxtLink
         >
         or Edith on
-        <a
-          class="text-emerald-600 font-semibold underline"
-          href=":tel:+233241981002"
+        <NuxtLink
+          to="tel:+233241981002"
           target="_blank"
-          rel="noopener noreferrer"
-          >024 198 1002</a
+          class="text-emerald-600 font-semibold underline"
+          >024 198 1002</NuxtLink
         >
       </p>
     </div>
@@ -142,11 +132,44 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import NavBar from "@/components/NavBar.vue";
 const name = ref("");
 const guests = ref(0);
 const loading = ref(false);
+
+const funnyNote = computed(() => {
+  const g = guests.value;
+
+  if (g >= 100) return "100 people?? You’re hosting your own wedding inside ours! 🎪";
+  if (g >= 90) return "This has turned into a festival. Should we start selling tickets? 🎟️";
+  if (g >= 80) return "Abeg, let us know if we should move this to Independence Square. 🇬🇭";
+  if (g >= 70) return "This looks like the entire WhatsApp broadcast list. 😅";
+  if (g >= 60) return "Ei! Are you sure we’re not naming your baby too? 👶🏾🎉";
+  if (g >= 50) return "So basically, you’re bringing your village. Cool cool. 🛖";
+  if (g >= 45) return "Make sure they all wear matching kente. Thanks. 👗👕";
+  if (g >= 40) return "Security might ask questions, please prepare answers. 🕵🏾‍♂️";
+  if (g >= 35) return "We see you… Wedding guest of the year! 🏆";
+  if (g >= 30) return "Did you even RSVP for yourself… or just your entourage? 😭";
+  if (g >= 25) return "We need to check the food budget again. 🍽️🔁";
+  if (g >= 22) return "You're basically throwing a side-event now. 😮‍💨";
+  if (g >= 20) return "You dey bring neighborhood or church branch? 😂";
+  if (g >= 18) return "Hope they’re not all hungry... and thirsty. 🧃😬";
+  if (g >= 16) return "This is no longer RSVP, it’s a census. 📝";
+  if (g >= 14) return "The caterer just fainted. Hold on. 😵";
+  if (g >= 12) return "We'll need an MC just for your table. 🎤";
+  if (g >= 10) return "Are you the event planner or the guest? 😅";
+  if (g >= 9) return "We better order more jollof. 🍛";
+  if (g >= 8) return "Ei! Do we provide transport too? 🚌";
+  if (g >= 7) return "Please, tell us there’s a sponsorship coming. 💰";
+  if (g >= 6) return "Hope you're bringing your own chairs. 🪑😂";
+  if (g >= 5) return "We’ll set a special table just for your crew. 🍽️";
+  if (g >= 4) return "VIP section loading for your squad... 🔥";
+  if (g >= 3) return "This is turning into your own mini party 😄";
+  if (g === 2) return "Double trouble! We love it 💃🏾🕺🏾";
+  if (g === 1) return "Perfect! You and your +1. Love it. ❤️";
+  return "";
+});
 
 function increaseGuests() {
   guests.value += 1;
