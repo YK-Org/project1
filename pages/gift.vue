@@ -51,10 +51,10 @@
 
               <button
                 @click="copyToClipboard('0557382244', 'momo')"
-                class="flex justify-between items-center w-full text-sm text-gray-500 hover:text-emerald-600 "
+                class="flex justify-between items-center w-full text-sm text-gray-500 hover:text-emerald-600"
               >
                 <!-- Left: Label + Value -->
-                <span>
+                <span class="text-left">
                   MTN MoMo:
                   <span class="font-semibold text-gray-900">055 738 2244</span>
                 </span>
@@ -74,10 +74,10 @@
 
               <button
                 @click="copyToClipboard('1011011754004', 'bank')"
-                class="flex justify-between items-center w-full text-sm text-gray-500 hover:text-emerald-600 "
+                class="flex justify-between items-center w-full text-sm text-gray-500 hover:text-emerald-600"
               >
                 <!-- Left: Label + Value -->
-                <span>
+                <span class="text-left">
                   First National Bank:
                   <span class="font-semibold text-gray-900">1011011754004</span>
                 </span>
