@@ -31,7 +31,7 @@
         <a
           href="https://maps.google.com/?q=Trinity+United+Church,+Accra"
           target="_blank"
-          class="bg-emerald-700 text-white px-3 py-2 rounded-full tex-base font-semibold hover:bg-emerald-800"
+          class="border border-emerald-600/50 text-emerald-700 px-3 py-2 rounded-full tex-base font-semibold hover:bg-emerald-800 hover:text-white transition-all delay-75 ease-in-out duration-300"
         >
           Get Directions
         </a>
