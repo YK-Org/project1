@@ -7,28 +7,37 @@
       class="absolute inset-0 bg-[url('/images/yk2.png')] bg-cover bg-center -z-10"
     ></div>
 
-    <div
-      class="w-full h-full max-auto max-w-md flex flex-col justify-center gap-8"
-    >
+    <div class="w-full h-full max-auto max-w-md flex flex-col justify-center gap-8">
       <div class="flex flex-col w-ful gap-2 w-full">
-        <h2 class="text-6xl font-great text-brown-700 font-medium">
-          Our Story
-        </h2>
-        <p class="text-brown-800 leading-6 sm:leading-10 text-sm md:text-base text-justify">
-          Our story started during a software company internship. We didn’t know
-          each other at the time. Most people seemed to have some connection,
-          but we were just two strangers figuring things out. We worked really
-          well together and became a solid team. That continued during national
-          service, and we both got the chance to stay on afterward. After a
-          while of working side by side, we started dating. Since then, it’s
-          been an amazing journey. It’s so special to see how our families’
-          paths have crossed too. It really feels like this was meant to be.
+        <h2 class="text-6xl font-great text-brown-700 font-medium">Our Story</h2>
+        <p
+          class="text-brown-800 leading-6 sm:leading-10 text-sm md:text-base text-justify"
+        >
+          Two strangers in a bustling software company, we discovered we worked together
+          like magic, our minds dancing in perfect harmony over code and dreams. Through
+          national service and beyond, destiny kept pulling us closer until professional
+          admiration bloomed into something intoxicating. When we finally took that leap
+          from colleagues to lovers, it felt like coming home to a place we'd always been
+          searching for.
+        </p>
+
+        <p
+          class="text-brown-800 leading-6 sm:leading-10 text-sm md:text-base text-justify pt-2"
+        >
+          Since then, every day has been an adventure written in starlight. But here's the
+          most enchanting part—our families' stories began to intertwine like golden
+          threads, connections emerging from the past that had been quietly converging
+          long before we ever met. This isn't just a love story, it's destiny fulfilled,
+          written in code and blessed by all the forces that believe in forever love.
+        </p>
+        <p
+          class="text-brown-800 leading-6 sm:leading-10 text-sm md:text-base text-justify pt-2"
+        >
+          Some love stories are accidents. Ours was always inevitable
         </p>
       </div>
 
-      <div
-        class="relative w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4"
-      >
+      <div class="relative w-full grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4">
         <NuxtImg
           src="/images/pic4.png"
           class="object-cover aspect-square size-32 rounded-xl shadow-2xl grayscale hover:grayscale-0 scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-10deg] hover:rotate-0 bg-white p-1"
