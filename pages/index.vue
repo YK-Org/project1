@@ -4,7 +4,7 @@
     <div class="absolute inset-0 bg-[url('/images/yk.png')] bg-cover bg-center opacity-30 z-0"></div>
 
     <!-- Content Layer -->
-    <div class="relative z-10 w-full mx-auto max-w-6xl flex flex-col justify-center items-center gap-1 sm:gap-8 text-center">
+    <div class="relative z-10 w-full mx-auto max-w-6xl flex flex-col justify-center items-center gap-4 sm:gap-8 text-center">
       <h1 class="text-5xl font-medium md:text-9xl font-great-vibes text-brown-700 drop-shadow-lg">
         Yoofi & Kuor
       </h1>

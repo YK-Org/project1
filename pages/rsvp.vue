@@ -94,7 +94,10 @@
         </div>
       </div>
 
-      <p v-if="funnyNote" class="text-base font-semibold text-amber-600 text-left mt-2 italic">
+      <p
+        v-if="funnyNote"
+        class="text-base font-semibold text-amber-600 text-left mt-2"
+      >
         {{ funnyNote }}
       </p>
 
@@ -114,18 +117,28 @@
         <NuxtLink
           to="tel:+233203660341"
           target="_blank"
-          class="text-emerald-600 font-semibold underline"
+          class="text-emerald-600 font-semibold underline hover:text-emerald-800 whitespace-nowrap"
           >020 366 0341</NuxtLink
         >
         or Edith on
         <NuxtLink
           to="tel:+233241981002"
           target="_blank"
-          class="text-emerald-600 font-semibold underline"
+          class="text-emerald-600 font-semibold underline hover:text-emerald-800 whitespace-nowrap"
           >024 198 1002</NuxtLink
         >
       </p>
     </div>
+
+
+    <transition name="slide-down">
+      <div
+        v-if="showToast"
+        class="fixed top-6 left-1/2 transform -translate-x-1/2  bg-emerald-800 text-white border border-emerald-100 px-4 py-3 rounded-xl shadow-xl text-sm font-medium z-50"
+      >
+        {{ toastMessage }}
+      </div>
+    </transition>
 
     <NavBar />
   </div>
@@ -134,6 +147,8 @@
 <script setup>
 import { ref, computed } from "vue";
 import NavBar from "@/components/NavBar.vue";
+import confetti from "canvas-confetti";
+
 const name = ref("");
 const guests = ref(0);
 const loading = ref(false);
@@ -142,8 +157,10 @@ const funnyNote = computed(() => {
   const g = guests.value;
 
   if (g >= 100) return "100 people?? You’re hosting your own wedding inside ours! 🎪";
-  if (g >= 90) return "This has turned into a festival. Should we start selling tickets? 🎟️";
-  if (g >= 80) return "Abeg, let us know if we should move this to Independence Square. 🇬🇭";
+  if (g >= 90)
+    return "This has turned into a festival. Should we start selling tickets? 🎟️";
+  if (g >= 80)
+    return "Abeg, let us know if we should move this to Independence Square. 🇬🇭";
   if (g >= 70) return "This looks like the entire WhatsApp broadcast list. 😅";
   if (g >= 60) return "Ei! Are you sure we’re not naming your baby too? 👶🏾🎉";
   if (g >= 50) return "So basically, you’re bringing your village. Cool cool. 🛖";
@@ -177,6 +194,31 @@ function increaseGuests() {
 function decreaseGuests() {
   if (guests.value > 0) guests.value -= 1;
 }
+
+function launchConfetti() {
+  confetti({
+    particleCount: 150,
+    spread: 100,
+    origin: { y: 0.6 },
+  });
+}
+
+const showToast = ref(false);
+const toastMessage = ref("");
+let toastTimeout = null;
+
+function showRSVPToast(message) {
+  toastMessage.value = message;
+  showToast.value = true;
+
+  // Clear previous timeout if any
+  if (toastTimeout) clearTimeout(toastTimeout);
+
+  toastTimeout = setTimeout(() => {
+    showToast.value = false;
+  }, 5000); // Hide after 5 seconds
+}
+
 async function submitRSVP() {
   try {
     loading.value = true;
@@ -197,11 +239,29 @@ async function submitRSVP() {
       body: JSON.stringify(payload),
     });
 
-    alert(`Thanks ${name.value}, your RSVP has been saved!`);
+    // alert(`Thanks ${name.value}, your RSVP has been saved!`);
+    // showSuccess.value = true;
+    launchConfetti();
+    showRSVPToast(`🎉 Thanks ${name.value}, your RSVP is saved!`);
+
     name.value = "";
     guests.value = 0;
+  } catch (error) {
+    alert("Something went wrong!");
   } finally {
     loading.value = false;
   }
 }
 </script>
+
+<style>
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 0.4s ease;
+}
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+</style>

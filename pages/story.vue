@@ -25,7 +25,7 @@
           class="text-brown-800 leading-6 sm:leading-10 text-sm md:text-base text-justify pt-2"
         >
           Since then, every day has been an adventure written in starlight. But here's the
-          most enchanting part—our families' stories began to intertwine like golden
+          most enchanting part, our families' stories began to intertwine like golden
           threads, connections emerging from the past that had been quietly converging
           long before we ever met. This isn't just a love story, it's destiny fulfilled,
           written in code and blessed by all the forces that believe in forever love.

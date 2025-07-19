@@ -46,15 +46,55 @@
         <div class="bg-white rounded-xl border border-gray-200 px-4 py-3">
           <div class="flex gap-3 items-start">
             <span class="text-lg">🎁</span>
-            <div class="flex flex-col gap-1 text-sm">
+            <div class="flex flex-col w-full gap-4 text-sm">
               <p class="font-bold">Gift in Cash</p>
-              <p class="text-gray-500 text-sm">
-                MTN MoMo: <span class="font-semibold text-gray-900">055 738 2244</span>
-              </p>
-              <p class="text-gray-500 text-sm">
-                First National Bank:
-                <span class="font-semibold text-gray-900">1011011754004 </span>
-              </p>
+
+              <button
+                @click="copyToClipboard('0557382244', 'momo')"
+                class="flex justify-between items-center w-full text-sm text-gray-500 hover:text-emerald-600 "
+              >
+                <!-- Left: Label + Value -->
+                <span>
+                  MTN MoMo:
+                  <span class="font-semibold text-gray-900">055 738 2244</span>
+                </span>
+
+                <!-- Right: Copy status -->
+                <span
+                  class="text-xs ml-4 transition-opacity duration-300"
+                  :class="
+                    copiedStatus.momo
+                      ? 'text-emerald-700 font-semibold'
+                      : 'text-emerald-600'
+                  "
+                >
+                  {{ copiedStatus.momo ? "Copied!" : "Copy" }}
+                </span>
+              </button>
+
+              <button
+                @click="copyToClipboard('1011011754004', 'bank')"
+                class="flex justify-between items-center w-full text-sm text-gray-500 hover:text-emerald-600 "
+              >
+                <!-- Left: Label + Value -->
+                <span>
+                  First National Bank:
+                  <span class="font-semibold text-gray-900">1011011754004</span>
+                </span>
+
+                <!-- Right: Copy status -->
+                <span
+                  class="text-xs ml-4 transition-opacity duration-300"
+                  :class="
+                    copiedStatus.bank
+                      ? 'text-emerald-700 font-semibold'
+                      : 'text-emerald-600'
+                  "
+                >
+                  {{ copiedStatus.bank ? "Copied!" : "Copy" }}
+                </span>
+              </button>
+
               <p class="text-gray-500 text-sm">
                 Account Name:
                 <span class="font-semibold text-gray-900">Joshua Yoofi Graham</span>
@@ -85,4 +125,34 @@
 
 <script setup>
 import NavBar from "@/components/NavBar.vue";
+
+import { ref } from "vue";
+
+const copiedStatus = ref({
+  momo: false,
+  bank: false,
+});
+
+const copyTimeouts = {};
+
+function copyToClipboard(text, fieldKey) {
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      copiedStatus.value[fieldKey] = true;
+
+      // Clear existing timeout if it exists
+      if (copyTimeouts[fieldKey]) clearTimeout(copyTimeouts[fieldKey]);
+
+      // Set new timeout to reset the copied status
+      copyTimeouts[fieldKey] = setTimeout(() => {
+        copiedStatus.value[fieldKey] = false;
+      }, 2000);
+    })
+    .catch(() => {
+      showRSVPToast("❌ Copy failed");
+    });
+
+  showRSVPToast("📋 Copied!");
+}
 </script>
