@@ -3,7 +3,7 @@
   <NuxtLayout>
     <NuxtPage :transition="pageTransition" />
   </NuxtLayout>
-  <NavBar class="flex justify-center items-center" />
+  <NavBar class="" />
   <!-- </div> -->
 </template>
 
