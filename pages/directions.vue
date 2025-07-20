@@ -37,13 +37,5 @@
         >
       </div>
     </div>
-
-    <div class="flex flex-col justify-center items-center text-center mt-12">
-      <NavBar />
-    </div>
   </div>
 </template>
-
-<script setup>
-import NavBar from "@/components/NavBar.vue";
-</script>

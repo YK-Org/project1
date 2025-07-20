@@ -1,11 +1,17 @@
 <template>
+  <!-- <div class="relative "> -->
   <NuxtLayout>
-    <NuxtPage />
+    <NuxtPage :transition="pageTransition" />
   </NuxtLayout>
+  <NavBar class="flex justify-center items-center" />
+  <!-- </div> -->
 </template>
 
 <script setup>
-// No logic needed here for now
+const pageTransition = {
+  name: "ios-page",
+  mode: "out-in", // ensures smooth sequencing
+};
 </script>
 
 <style>
@@ -14,5 +20,19 @@
 
 h1 {
   font-family: "Great Vibes", cursive;
+}
+
+.ios-page-enter-active,
+.ios-page-leave-active {
+  transition: all 250ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.ios-page-enter-from {
+  opacity: 0;
+  transform: translateX(20px) scale(0.98);
+}
+.ios-page-leave-to {
+  opacity: 0;
+  transform: translateX(-10px) scale(0.985);
 }
 </style>

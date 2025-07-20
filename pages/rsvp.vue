@@ -139,14 +139,11 @@
         {{ toastMessage }}
       </div>
     </transition>
-
-    <NavBar />
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
-import NavBar from "@/components/NavBar.vue";
 import confetti from "canvas-confetti";
 
 const name = ref("");

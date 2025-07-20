@@ -119,13 +119,27 @@
       </div>
     </div>
 
-    <NavBar />
+    <!-- Floating Prayer Emoji Confetti -->
+    <div class="fixed inset-0 pointer-events-none z-40">
+      <span
+        v-for="emoji in prayerConfetti"
+        :key="emoji.id"
+        class="absolute text-2xl animate-prayer"
+        :style="{
+          top: emoji.y + 'px',
+          left: emoji.x + 'px',
+          animationDelay: emoji.delay + 'ms',
+          animationDuration: emoji.duration + 'ms',
+          opacity: 0.9,
+        }"
+      >
+        🙏
+      </span>
+    </div>
   </div>
 </template>
 
 <script setup>
-import NavBar from "@/components/NavBar.vue";
-
 import { ref } from "vue";
 
 const copiedStatus = ref({
@@ -134,6 +148,9 @@ const copiedStatus = ref({
 });
 
 const copyTimeouts = {};
+
+let emojiId = 0;
+const prayerConfetti = ref([]);
 
 function copyToClipboard(text, fieldKey) {
   navigator.clipboard
@@ -155,4 +172,41 @@ function copyToClipboard(text, fieldKey) {
 
   showRSVPToast("📋 Copied!");
 }
+
+function showPrayerBurst() {
+  const count = 5; // Number of 🙏 per tap
+
+  for (let i = 0; i < count; i++) {
+    prayerConfetti.value.push({
+      id: emojiId++,
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      delay: Math.random() * 200,
+      duration: 2000 + Math.random() * 1000,
+    });
+  }
+
+  // Clean up emojis after animation
+  setTimeout(() => {
+    prayerConfetti.value.splice(0, count);
+  }, 3000);
+}
 </script>
+
+<style>
+@keyframes floatPrayer {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2) translateY(-100px) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+.animate-prayer {
+  animation-name: floatPrayer;
+  animation-timing-function: ease-out;
+}
+</style>

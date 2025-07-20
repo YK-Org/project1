@@ -12,11 +12,5 @@
         30.08.2025 • 11 AM
       </p>
     </div>
-
-    <NavBar/>
   </div>
 </template>
-
-<script setup>
-import NavBar from "@/components/NavBar.vue";
-</script>
