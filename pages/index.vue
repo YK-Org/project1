@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-dvh flex flex-col justify-center items-center overflow-hidden">
+  <div class="relative flex flex-col justify-center items-center overflow-hidden">
     <!-- Background Image with Reduced Opacity -->
     <div class="absolute inset-0 bg-[url('/images/yk.png')] bg-cover bg-center opacity-30 z-0"></div>
 
