@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-dvh flex flex-col justify-center items-center overflow-hidden px-4 py-24 lg:py-16"
+    class="relative min-h-dvh flex flex-col justify-center items-center overflow-hidden px-4 py-24 lg:py-32"
   >
     <!-- Background Image with Reduced Opacity -->
     <div
@@ -94,10 +94,7 @@
         </div>
       </div>
 
-      <p
-        v-if="funnyNote"
-        class="text-base font-semibold text-amber-600 text-left mt-2"
-      >
+      <p v-if="funnyNote" class="text-base font-semibold text-amber-600 text-left mt-2">
         {{ funnyNote }}
       </p>
 
@@ -130,11 +127,167 @@
       </p>
     </div>
 
+    <div
+      class="bg-white relative flex flex-col items-center gap-4 rounded-3xl p-4 lg:p-8 max-w-md w-full text-center mt-4"
+    >
+      <div class="max-w-md mx-auto text-center flex flex-col gap-2">
+        <h3 class="text-lg font-semibold text-gray-800">Wedding Colors & Inspiration</h3>
+        <p class="text-xs text-gray-500">
+          Need a little inspiration for the colors and what to wear
+        </p>
+      </div>
+
+      <!-- Color Swatches -->
+      <div class="flex justify-center flex-wrap gap-4">
+        <div
+          v-for="(color, index) in weddingColors"
+          :key="index"
+          class="flex items-center gap-1"
+        >
+          <div
+            class="w-8 h-8 rounded-full border"
+            :style="{ backgroundColor: color.hex }"
+          ></div>
+          <p class="text-xs font-medium text-gray-700">{{ color.name }}</p>
+        </div>
+      </div>
+
+      <!-- <div
+        class="flex w-full overflow-scroll py-1 -space-x-2 drop-shadow-xl scrollbar-hidden"
+      >
+        <a
+          href="https://i.pinimg.com/1200x/95/2d/f6/952df6ec7ff24263db12bd87b3ecbd84.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/1200x/95/2d/f6/952df6ec7ff24263db12bd87b3ecbd84.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[4deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+        <a
+          href="https://i.pinimg.com/736x/79/a1/e4/79a1e434555c4b1b937a90c49d7cdf6f.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/736x/79/a1/e4/79a1e434555c4b1b937a90c49d7cdf6f.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-3deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+        <a
+          href="https://i.pinimg.com/1200x/d8/44/bd/d844bd5d16fe1e8884a3beae84be7b51.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/1200x/d8/44/bd/d844bd5d16fe1e8884a3beae84be7b51.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[4deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+        <a
+          href="https://i.pinimg.com/736x/9d/38/8a/9d388af19a6f8d847ad921018b149b47.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/736x/9d/38/8a/9d388af19a6f8d847ad921018b149b47.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-3deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+        <a
+          href="https://i.pinimg.com/736x/f0/51/52/f05152e130167349550e7339dbe93781.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/736x/f0/51/52/f05152e130167349550e7339dbe93781.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-3deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+        <a
+          href="https://i.pinimg.com/1200x/b1/fc/df/b1fcdf61e98b9f75237a9d7f671bcdc4.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/1200x/b1/fc/df/b1fcdf61e98b9f75237a9d7f671bcdc4.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[4deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+
+        <a
+          href="https://i.pinimg.com/736x/05/79/d1/0579d13b916d84f730656c47a5599e04.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/736x/05/79/d1/0579d13b916d84f730656c47a5599e04.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[4deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+        <a
+          href="https://i.pinimg.com/736x/81/b4/56/81b456206ca5401d2b93bc57700a02e7.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/736x/81/b4/56/81b456206ca5401d2b93bc57700a02e7.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[4deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+
+        <a
+          href="https://i.pinimg.com/1200x/f1/c9/40/f1c9404861e77e74b2bd2d6f5d1799d7.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            src="https://i.pinimg.com/1200x/f1/c9/40/f1c9404861e77e74b2bd2d6f5d1799d7.jpg"
+            class="object-cover aspect-square rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out rotate-[-3deg] hover:rotate-0 bg-white p-0.5"
+          />
+        </a>
+      </div> -->
+
+      <div
+        class="flex justify-center w-full overflow-scroll p-4 -space-x-2 drop-shadow-xl scrollbar-hidden"
+      >
+        <a
+          v-for="(url, index) in inspirationImages"
+          :key="index"
+          :href="url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            :src="url"
+            width="64"
+            height="64"
+            class="w-16 h-16 object-cover rounded-xl scale-105 hover:scale-110 transition-all duration-200 delay-75 ease-in-out hover:rotate-0 bg-white p-0.5"
+            :class="index % 2 === 0 ? 'rotate-[10deg]' : 'rotate-[-12deg]'"
+          />
+        </a>
+      </div>
+      <NuxtLink
+        to="https://www.pinterest.com/search/pins/?q=emerald%20beige%20guest%20outfits"
+        target="_blank"
+        class="border border-emerald-600/50 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-emerald-800 hover:text-white transition-all delay-75 ease-in-out duration-300"
+      >
+        See More Inspiration</NuxtLink
+      >
+    </div>
 
     <transition name="slide-down">
       <div
         v-if="showToast"
-        class="fixed top-6 left-1/2 transform -translate-x-1/2  bg-emerald-800 text-white border border-emerald-100 px-4 py-3 rounded-xl shadow-xl text-sm font-medium z-50"
+        class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-emerald-800 text-white border border-emerald-100 px-4 py-3 rounded-xl shadow-xl text-sm font-medium z-50"
       >
         {{ toastMessage }}
       </div>
@@ -150,6 +303,19 @@ const name = ref("");
 const guests = ref(0);
 const loading = ref(false);
 
+const weddingColors = [
+  { name: "Emerald", hex: "#006a4e", meaning: "Abundance" },
+  { name: "Beige", hex: "#F1E5D1", meaning: "calm" },
+];
+
+const inspirationImages = [
+  "https://i.pinimg.com/1200x/95/2d/f6/952df6ec7ff24263db12bd87b3ecbd84.jpg",
+  "https://i.pinimg.com/1200x/d8/44/bd/d844bd5d16fe1e8884a3beae84be7b51.jpg",
+  "https://i.pinimg.com/736x/9d/38/8a/9d388af19a6f8d847ad921018b149b47.jpg",
+  "https://i.pinimg.com/736x/f0/51/52/f05152e130167349550e7339dbe93781.jpg",
+  "https://i.pinimg.com/736x/05/79/d1/0579d13b916d84f730656c47a5599e04.jpg",
+  "https://i.pinimg.com/736x/81/b4/56/81b456206ca5401d2b93bc57700a02e7.jpg",
+];
 const funnyNote = computed(() => {
   const g = guests.value;
 
@@ -260,5 +426,13 @@ async function submitRSVP() {
 .slide-down-leave-to {
   opacity: 0;
   transform: translateY(-20px);
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
 }
 </style>
